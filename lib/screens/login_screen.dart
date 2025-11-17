@@ -11,8 +11,10 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: colorScheme.background,
       appBar: AppBar(
         title: const Text('Sign In'),
         actions: [
@@ -29,40 +31,47 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Sign In',
-                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  color: const Color(0xFFF2F2F2),
-                ),
-              ),
+              Text('Sign In', style: textTheme.headlineMedium),
               const SizedBox(height: 32),
               TextField(
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: const Color(0xFF181818),
+                  fillColor: colorScheme.surface,
                   hintText: 'Email',
-                  hintStyle: const TextStyle(color: Color(0xFFB0B0B0)),
+                  hintStyle: textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.onSurface.withOpacity(0.5),
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: Color(0xFF474747)),
+                    borderSide: BorderSide(
+                      color: colorScheme.onSurface.withOpacity(0.2),
+                    ),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xFFF2F2F2)),
+                style: textTheme.bodyMedium?.copyWith(
+                  color: colorScheme.onSurface,
+                ),
               ),
               const SizedBox(height: 16),
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: const Color(0xFF181818),
+                  fillColor: colorScheme.surface,
                   hintText: 'Password',
-                  hintStyle: const TextStyle(color: Color(0xFFB0B0B0)),
+                  hintStyle: textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.onSurface.withOpacity(0.5),
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: Color(0xFF474747)),
+                    borderSide: BorderSide(
+                      color: colorScheme.onSurface.withOpacity(0.2),
+                    ),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xFFF2F2F2)),
+                style: textTheme.bodyMedium?.copyWith(
+                  color: colorScheme.onSurface,
+                ),
               ),
               const SizedBox(height: 16),
               Align(
@@ -71,9 +80,11 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/forgot-password');
                   },
-                  child: const Text(
+                  child: Text(
                     'Forgot Password?',
-                    style: TextStyle(color: Color(0xFFB0B0B0)),
+                    style: textTheme.bodyMedium?.copyWith(
+                      color: colorScheme.onSurface.withOpacity(0.5),
+                    ),
                   ),
                 ),
               ),
@@ -81,14 +92,6 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFDE9B6B),
-                    foregroundColor: const Color(0xFF090909),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, '/home');
                   },
@@ -99,17 +102,21 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     'Don\'t have an account?',
-                    style: TextStyle(color: Color(0xFFB0B0B0)),
+                    style: textTheme.bodyMedium?.copyWith(
+                      color: colorScheme.onSurface.withOpacity(0.5),
+                    ),
                   ),
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/register');
                     },
-                    child: const Text(
+                    child: Text(
                       'Register',
-                      style: TextStyle(color: Color(0xFFDE9B6B)),
+                      style: textTheme.bodyMedium?.copyWith(
+                        color: colorScheme.primary,
+                      ),
                     ),
                   ),
                 ],

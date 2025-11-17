@@ -11,8 +11,10 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: colorScheme.background,
       appBar: AppBar(
         title: const Text('Forgot Password'),
         actions: [
@@ -29,38 +31,31 @@ class ForgotPasswordScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Forgot Password',
-                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  color: const Color(0xFFF2F2F2),
-                ),
-              ),
+              Text('Forgot Password', style: textTheme.headlineMedium),
               const SizedBox(height: 32),
               TextField(
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: const Color(0xFF181818),
+                  fillColor: colorScheme.surface,
                   hintText: 'Email',
-                  hintStyle: const TextStyle(color: Color(0xFFB0B0B0)),
+                  hintStyle: textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.onSurface.withOpacity(0.5),
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: Color(0xFF474747)),
+                    borderSide: BorderSide(
+                      color: colorScheme.onSurface.withOpacity(0.2),
+                    ),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xFFF2F2F2)),
+                style: textTheme.bodyMedium?.copyWith(
+                  color: colorScheme.onSurface,
+                ),
               ),
               const SizedBox(height: 24),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFDE9B6B),
-                    foregroundColor: const Color(0xFF090909),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
                   onPressed: () {
                     Navigator.pop(context);
                   },

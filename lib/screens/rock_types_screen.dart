@@ -28,8 +28,10 @@ class RockTypesScreen extends StatelessWidget {
             'A clastic sedimentary rock composed mainly of sand-sized minerals.',
       },
     ];
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: colorScheme.background,
       appBar: AppBar(
         title: const Text('Rock Types'),
         actions: [
@@ -48,27 +50,20 @@ class RockTypesScreen extends StatelessWidget {
           final rock = rocks[index];
           return Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: colorScheme.surface,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
-              ),
+              border: Border.all(color: colorScheme.onSurface.withOpacity(0.2)),
             ),
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  rock['name']!,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
+                Text(rock['name']!, style: textTheme.headlineMedium),
                 const SizedBox(height: 8),
                 Text(
                   rock['desc']!,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(
-                      context,
-                    ).colorScheme.onSurface.withOpacity(0.7),
+                  style: textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.onSurface.withOpacity(0.7),
                   ),
                 ),
               ],
