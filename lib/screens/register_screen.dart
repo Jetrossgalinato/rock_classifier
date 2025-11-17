@@ -26,123 +26,126 @@ class RegisterScreen extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Register',
-                style: textTheme.headlineMedium?.copyWith(fontSize: 20),
-              ),
-              const SizedBox(height: 18),
-              TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: colorScheme.surface,
-                  hintText: 'Email',
-                  hintStyle: textTheme.bodyMedium?.copyWith(
-                    fontSize: 14,
-                    color: colorScheme.onSurface.withOpacity(0.5),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: colorScheme.onSurface.withOpacity(0.2),
-                    ),
-                  ),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 300),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Register',
+                  style: textTheme.headlineMedium?.copyWith(fontSize: 20),
                 ),
-                style: textTheme.bodyMedium?.copyWith(
-                  fontSize: 14,
-                  color: colorScheme.onSurface,
-                ),
-              ),
-              const SizedBox(height: 8),
-              TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: colorScheme.surface,
-                  hintText: 'Password',
-                  hintStyle: textTheme.bodyMedium?.copyWith(
-                    fontSize: 14,
-                    color: colorScheme.onSurface.withOpacity(0.5),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: colorScheme.onSurface.withOpacity(0.2),
-                    ),
-                  ),
-                ),
-                style: textTheme.bodyMedium?.copyWith(
-                  fontSize: 14,
-                  color: colorScheme.onSurface,
-                ),
-                obscureText: true,
-              ),
-              const SizedBox(height: 8),
-              TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: colorScheme.surface,
-                  hintText: 'Confirm Password',
-                  hintStyle: textTheme.bodyMedium?.copyWith(
-                    fontSize: 14,
-                    color: colorScheme.onSurface.withOpacity(0.5),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: colorScheme.onSurface.withOpacity(0.2),
-                    ),
-                  ),
-                ),
-                style: textTheme.bodyMedium?.copyWith(
-                  fontSize: 14,
-                  color: colorScheme.onSurface,
-                ),
-                obscureText: true,
-              ),
-              const SizedBox(height: 18),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    textStyle: const TextStyle(fontSize: 14),
-                  ),
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/home');
-                  },
-                  child: const Text('Register'),
-                ),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Already have an account?',
-                    style: textTheme.bodyMedium?.copyWith(
-                      fontSize: 13,
+                const SizedBox(height: 18),
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: colorScheme.surface,
+                    hintText: 'Email',
+                    hintStyle: textTheme.bodyMedium?.copyWith(
+                      fontSize: 14,
                       color: colorScheme.onSurface.withOpacity(0.5),
                     ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    },
-                    child: Text(
-                      'Sign In',
-                      style: textTheme.bodyMedium?.copyWith(
-                        fontSize: 13,
-                        color: colorScheme.primary,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: colorScheme.onSurface.withOpacity(0.2),
                       ),
                     ),
                   ),
-                ],
-              ),
-            ],
+                  style: textTheme.bodyMedium?.copyWith(
+                    fontSize: 14,
+                    color: colorScheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: colorScheme.surface,
+                    hintText: 'Password',
+                    hintStyle: textTheme.bodyMedium?.copyWith(
+                      fontSize: 14,
+                      color: colorScheme.onSurface.withOpacity(0.5),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: colorScheme.onSurface.withOpacity(0.2),
+                      ),
+                    ),
+                  ),
+                  style: textTheme.bodyMedium?.copyWith(
+                    fontSize: 14,
+                    color: colorScheme.onSurface,
+                  ),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 8),
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: colorScheme.surface,
+                    hintText: 'Confirm Password',
+                    hintStyle: textTheme.bodyMedium?.copyWith(
+                      fontSize: 14,
+                      color: colorScheme.onSurface.withOpacity(0.5),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: colorScheme.onSurface.withOpacity(0.2),
+                      ),
+                    ),
+                  ),
+                  style: textTheme.bodyMedium?.copyWith(
+                    fontSize: 14,
+                    color: colorScheme.onSurface,
+                  ),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 18),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      textStyle: const TextStyle(fontSize: 14),
+                    ),
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/home');
+                    },
+                    child: const Text('Register'),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already have an account?',
+                      style: textTheme.bodyMedium?.copyWith(
+                        fontSize: 13,
+                        color: colorScheme.onSurface.withOpacity(0.5),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/login');
+                      },
+                      child: Text(
+                        'Sign In',
+                        style: textTheme.bodyMedium?.copyWith(
+                          fontSize: 13,
+                          color: colorScheme.primary,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -33,56 +33,59 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.map, size: 48, color: colorScheme.primary),
-              const SizedBox(height: 12),
-              Text(
-                'Welcome to Rock Classifier',
-                style: textTheme.headlineMedium?.copyWith(fontSize: 20),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Select a location on the map to view rock types.',
-                style: textTheme.bodyMedium?.copyWith(
-                  fontSize: 13,
-                  color: colorScheme.onSurface.withOpacity(0.7),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 300),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.map, size: 48, color: colorScheme.primary),
+                const SizedBox(height: 12),
+                Text(
+                  'Welcome to Rock Classifier',
+                  style: textTheme.headlineMedium?.copyWith(fontSize: 20),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 18),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    textStyle: const TextStyle(fontSize: 14),
+                const SizedBox(height: 8),
+                Text(
+                  'Select a location on the map to view rock types.',
+                  style: textTheme.bodyMedium?.copyWith(
+                    fontSize: 13,
+                    color: colorScheme.onSurface.withOpacity(0.7),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/map');
-                  },
-                  child: const Text('Select Location on Map'),
+                  textAlign: TextAlign.center,
                 ),
-              ),
-              const SizedBox(height: 8),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    textStyle: const TextStyle(fontSize: 14),
+                const SizedBox(height: 18),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      textStyle: const TextStyle(fontSize: 14),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/map');
+                    },
+                    child: const Text('Select Location on Map'),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/rock-types');
-                  },
-                  child: const Text('View Rock Types'),
                 ),
-              ),
-            ],
+                const SizedBox(height: 8),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      textStyle: const TextStyle(fontSize: 14),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/rock-types');
+                    },
+                    child: const Text('View Rock Types'),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

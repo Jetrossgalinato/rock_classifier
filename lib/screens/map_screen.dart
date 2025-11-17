@@ -76,17 +76,25 @@ class _MapScreenState extends State<MapScreen> {
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                textStyle: const TextStyle(fontSize: 14),
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 300),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      textStyle: const TextStyle(fontSize: 14),
+                    ),
+                    onPressed: selectedLocation != null
+                        ? () {
+                            Navigator.pushNamed(context, '/rock-types');
+                          }
+                        : null,
+                    child: const Text('Show Rock Types'),
+                  ),
+                ),
               ),
-              onPressed: selectedLocation != null
-                  ? () {
-                      Navigator.pushNamed(context, '/rock-types');
-                    }
-                  : null,
-              child: const Text('Show Rock Types'),
             ),
           ),
         ],
