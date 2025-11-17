@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/rock_types');
+                    Navigator.pushNamed(context, '/rock-types');
                   },
                   child: const Text('View Rock Types'),
                 ),
