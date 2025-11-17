@@ -43,26 +43,30 @@ class RockTypesScreen extends StatelessWidget {
         ],
       ),
       body: ListView.separated(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(12),
         itemCount: rocks.length,
-        separatorBuilder: (context, index) => const SizedBox(height: 16),
+        separatorBuilder: (context, index) => const SizedBox(height: 8),
         itemBuilder: (context, index) {
           final rock = rocks[index];
           return Container(
             decoration: BoxDecoration(
               color: colorScheme.surface,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
               border: Border.all(color: colorScheme.onSurface.withOpacity(0.2)),
             ),
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(rock['name']!, style: textTheme.headlineMedium),
-                const SizedBox(height: 8),
+                Text(
+                  rock['name']!,
+                  style: textTheme.headlineMedium?.copyWith(fontSize: 20),
+                ),
+                const SizedBox(height: 4),
                 Text(
                   rock['desc']!,
                   style: textTheme.bodyMedium?.copyWith(
+                    fontSize: 14,
                     color: colorScheme.onSurface.withOpacity(0.7),
                   ),
                 ),

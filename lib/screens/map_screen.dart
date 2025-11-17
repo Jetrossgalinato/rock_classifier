@@ -35,9 +35,9 @@ class _MapScreenState extends State<MapScreen> {
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(12.0),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(12),
                 child: FlutterMap(
                   options: MapOptions(
                     initialCenter: LatLng(14.5995, 120.9842),
@@ -58,13 +58,13 @@ class _MapScreenState extends State<MapScreen> {
                       MarkerLayer(
                         markers: [
                           Marker(
-                            width: 40,
-                            height: 40,
+                            width: 32,
+                            height: 32,
                             point: selectedLocation!,
                             child: const Icon(
                               Icons.location_on,
                               color: Colors.red,
-                              size: 40,
+                              size: 32,
                             ),
                           ),
                         ],
@@ -75,8 +75,12 @@ class _MapScreenState extends State<MapScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(12.0),
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                textStyle: const TextStyle(fontSize: 14),
+              ),
               onPressed: selectedLocation != null
                   ? () {
                       Navigator.pushNamed(context, '/rock-types');

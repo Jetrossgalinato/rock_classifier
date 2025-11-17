@@ -34,39 +34,48 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.map, size: 80, color: colorScheme.primary),
-              const SizedBox(height: 24),
+              Icon(Icons.map, size: 48, color: colorScheme.primary),
+              const SizedBox(height: 12),
               Text(
                 'Welcome to Rock Classifier',
-                style: textTheme.headlineMedium,
+                style: textTheme.headlineMedium?.copyWith(fontSize: 20),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
               Text(
                 'Select a location on the map to view rock types.',
                 style: textTheme.bodyMedium?.copyWith(
+                  fontSize: 13,
                   color: colorScheme.onSurface.withOpacity(0.7),
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 18),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    textStyle: const TextStyle(fontSize: 14),
+                  ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/map');
                   },
                   child: const Text('Select Location on Map'),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    textStyle: const TextStyle(fontSize: 14),
+                  ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/rock-types');
                   },
