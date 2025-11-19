@@ -13,6 +13,12 @@ import 'screens/profile_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/visual_matcher_screen.dart';
 import 'screens/project_rock_screen.dart';
+import 'screens/igneous_rocks_screen.dart';
+import 'screens/sedimentary_rocks_screen.dart';
+import 'screens/metamorphic_rocks_screen.dart';
+import 'screens/field_tips_screen.dart';
+import 'screens/quizzes_screen.dart';
+import 'screens/geology_paths_screen.dart';
 
 void main() {
   runApp(const RockClassifierApp());
@@ -199,6 +205,18 @@ class _RockClassifierAppState extends State<RockClassifierApp> {
             VisualMatcherScreen(onThemeToggle: toggleTheme, isDark: isDark),
         '/project-rock': (context) =>
             ProjectRockScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/igneous-rocks': (context) =>
+            IgneousRocksScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/sedimentary-rocks': (context) =>
+            SedimentaryRocksScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/metamorphic-rocks': (context) =>
+            MetamorphicRocksScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/field-tips': (context) =>
+            FieldTipsScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/quizzes': (context) =>
+            QuizzesScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/geology-paths': (context) =>
+            GeologyPathsScreen(onThemeToggle: toggleTheme, isDark: isDark),
       },
     );
   }

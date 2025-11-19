@@ -19,31 +19,37 @@ class LearnScreen extends StatelessWidget {
         'title': 'Igneous Rocks',
         'desc': 'Learn about volcanic and plutonic rocks',
         'icon': Icons.local_fire_department,
+        'route': '/igneous-rocks',
       },
       {
         'title': 'Sedimentary Rocks',
         'desc': 'Explore layered rock formations',
         'icon': Icons.layers,
+        'route': '/sedimentary-rocks',
       },
       {
         'title': 'Metamorphic Rocks',
         'desc': 'Discover transformed rock types',
         'icon': Icons.change_circle,
+        'route': '/metamorphic-rocks',
       },
       {
         'title': 'Field Qualification',
         'desc': 'Tips for identifying rocks in the field',
         'icon': Icons.explore,
+        'route': '/field-tips',
       },
       {
         'title': 'Mini Quizzes',
         'desc': 'Test your knowledge with interactive quizzes',
         'icon': Icons.quiz,
+        'route': '/quizzes',
       },
       {
         'title': 'Geology Paths',
         'desc': 'Guided learning paths and resources',
         'icon': Icons.route,
+        'route': '/geology-paths',
       },
     ];
 
@@ -67,7 +73,7 @@ class LearnScreen extends StatelessWidget {
           final lesson = lessons[index];
           return InkWell(
             onTap: () {
-              // Navigation to lesson detail
+              Navigator.pushNamed(context, lesson['route'] as String);
             },
             borderRadius: BorderRadius.circular(12),
             child: Container(
