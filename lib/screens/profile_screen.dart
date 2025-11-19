@@ -122,7 +122,7 @@ class ProfileScreen extends StatelessWidget {
                 final item = menuItems[index];
                 return InkWell(
                   onTap: () {
-                    // Navigation to detail screen
+                    Navigator.pushNamed(context, item['route'] as String);
                   },
                   borderRadius: BorderRadius.circular(12),
                   child: Container(

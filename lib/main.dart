@@ -19,6 +19,11 @@ import 'screens/metamorphic_rocks_screen.dart';
 import 'screens/field_tips_screen.dart';
 import 'screens/quizzes_screen.dart';
 import 'screens/geology_paths_screen.dart';
+import 'screens/collections_screen.dart';
+import 'screens/bookmarks_screen.dart';
+import 'screens/progress_screen.dart';
+import 'screens/achievements_screen.dart';
+import 'screens/uploads_screen.dart';
 
 void main() {
   runApp(const RockClassifierApp());
@@ -217,6 +222,16 @@ class _RockClassifierAppState extends State<RockClassifierApp> {
             QuizzesScreen(onThemeToggle: toggleTheme, isDark: isDark),
         '/geology-paths': (context) =>
             GeologyPathsScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/collections': (context) =>
+            CollectionsScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/bookmarks': (context) =>
+            BookmarksScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/progress': (context) =>
+            ProgressScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/achievements': (context) =>
+            AchievementsScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/uploads': (context) =>
+            UploadsScreen(onThemeToggle: toggleTheme, isDark: isDark),
       },
     );
   }
