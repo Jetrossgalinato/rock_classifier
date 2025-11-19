@@ -5,6 +5,14 @@ import 'screens/forgot_password_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/map_screen.dart';
 import 'screens/rock_types_screen.dart';
+import 'screens/identify_screen.dart';
+import 'screens/library_screen.dart';
+import 'screens/learn_screen.dart';
+import 'screens/community_screen.dart';
+import 'screens/profile_screen.dart';
+import 'screens/settings_screen.dart';
+import 'screens/visual_matcher_screen.dart';
+import 'screens/project_rock_screen.dart';
 
 void main() {
   runApp(const RockClassifierApp());
@@ -175,6 +183,22 @@ class _RockClassifierAppState extends State<RockClassifierApp> {
             MapScreen(onThemeToggle: toggleTheme, isDark: isDark),
         '/rock-types': (context) =>
             RockTypesScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/identify': (context) =>
+            IdentifyScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/library': (context) =>
+            LibraryScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/learn': (context) =>
+            LearnScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/community': (context) =>
+            CommunityScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/profile': (context) =>
+            ProfileScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/settings': (context) =>
+            SettingsScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/visual-matcher': (context) =>
+            VisualMatcherScreen(onThemeToggle: toggleTheme, isDark: isDark),
+        '/project-rock': (context) =>
+            ProjectRockScreen(onThemeToggle: toggleTheme, isDark: isDark),
       },
     );
   }

@@ -32,61 +32,113 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 300),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.map, size: 48, color: colorScheme.primary),
-                const SizedBox(height: 12),
-                Text(
-                  'Welcome to Rock Classifier',
-                  style: textTheme.headlineMedium?.copyWith(fontSize: 20),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Select a location on the map to view rock types.',
-                  style: textTheme.bodyMedium?.copyWith(
-                    fontSize: 13,
-                    color: colorScheme.onSurface.withOpacity(0.7),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 18),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      textStyle: const TextStyle(fontSize: 14),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/map');
-                    },
-                    child: const Text('Select Location on Map'),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      textStyle: const TextStyle(fontSize: 14),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/rock-types');
-                    },
-                    child: const Text('View Rock Types'),
-                  ),
-                ),
-              ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Welcome to Rock Classifier',
+              style: textTheme.headlineMedium?.copyWith(fontSize: 22),
             ),
-          ),
+            const SizedBox(height: 8),
+            Text(
+              'Explore rocks, learn geology, and connect with the community',
+              style: textTheme.bodyMedium?.copyWith(
+                fontSize: 13,
+                color: colorScheme.onSurface.withOpacity(0.6),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12,
+                children: [
+                  _buildDashboardCard(
+                    context,
+                    icon: Icons.search,
+                    title: 'Identify Rocks',
+                    color: colorScheme.primary,
+                    onTap: () => Navigator.pushNamed(context, '/identify'),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    icon: Icons.library_books,
+                    title: 'Rock Library',
+                    color: colorScheme.secondary,
+                    onTap: () => Navigator.pushNamed(context, '/library'),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    icon: Icons.school,
+                    title: 'Learn',
+                    color: const Color(0xFF7FC6E6),
+                    onTap: () => Navigator.pushNamed(context, '/learn'),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    icon: Icons.people,
+                    title: 'Community',
+                    color: const Color(0xFFBFA39E),
+                    onTap: () => Navigator.pushNamed(context, '/community'),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    icon: Icons.person,
+                    title: 'Profile',
+                    color: colorScheme.primary.withOpacity(0.7),
+                    onTap: () => Navigator.pushNamed(context, '/profile'),
+                  ),
+                  _buildDashboardCard(
+                    context,
+                    icon: Icons.settings,
+                    title: 'Settings',
+                    color: colorScheme.onSurface.withOpacity(0.5),
+                    onTap: () => Navigator.pushNamed(context, '/settings'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDashboardCard(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        decoration: BoxDecoration(
+          color: colorScheme.surface,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: colorScheme.onSurface.withOpacity(0.1)),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 48, color: color),
+            const SizedBox(height: 12),
+            Text(
+              title,
+              style: textTheme.bodyMedium?.copyWith(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );
