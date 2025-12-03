@@ -16,7 +16,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: colorScheme.background,
       appBar: AppBar(
-        title: const Text('SheRocks'),
+        title: Row(
+          children: [
+            Image.asset('assets/images/logo.png', height: 32, width: 32),
+            const SizedBox(width: 12),
+            const Text('SheRocks'),
+          ],
+        ),
         actions: [
           IconButton(
             icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
