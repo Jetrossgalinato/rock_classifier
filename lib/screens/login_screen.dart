@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: colorScheme.background,
       appBar: AppBar(
-        title: const Text('Sign In'),
+        title: const Text('SheRocks'),
         actions: [
           IconButton(
             icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),

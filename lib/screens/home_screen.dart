@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: colorScheme.background,
       appBar: AppBar(
-        title: const Text('Rock Classifier'),
+        title: const Text('SheRocks'),
         actions: [
           IconButton(
             icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Welcome to Rock Classifier',
+              'Welcome to SheRocks',
               style: textTheme.headlineMedium?.copyWith(fontSize: 22),
             ),
             const SizedBox(height: 8),

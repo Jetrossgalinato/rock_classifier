@@ -178,7 +178,7 @@ class _RockClassifierAppState extends State<RockClassifierApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Rock Classifier',
+      title: 'SheRocks',
       theme: isDark ? darkTheme : lightTheme,
       initialRoute: '/login',
       routes: {
