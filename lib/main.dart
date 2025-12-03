@@ -46,8 +46,8 @@ class _RockClassifierAppState extends State<RockClassifierApp> {
     final Color text = const Color(0xFFF2F2F2);
     final Color textMuted = const Color(0xFFB0B0B0);
     final Color border = const Color(0xFF474747);
-    final Color primary = const Color(0xFFDE9B6B);
-    final Color secondary = const Color(0xFF7FC6E6);
+    final Color primary = const Color(0xFF9C27B0);
+    final Color secondary = const Color(0xFFBA68C8);
     final Color danger = const Color(0xFFBFA39E);
     return ThemeData(
       brightness: Brightness.dark,
@@ -110,8 +110,8 @@ class _RockClassifierAppState extends State<RockClassifierApp> {
     final Color text = const Color(0xFF181818);
     final Color textMuted = const Color(0xFF636363);
     final Color border = const Color(0xFFB0B0B0);
-    final Color primary = const Color(0xFFDE9B6B);
-    final Color secondary = const Color(0xFF7FC6E6);
+    final Color primary = const Color(0xFF9C27B0);
+    final Color secondary = const Color(0xFFBA68C8);
     final Color danger = const Color(0xFFBFA39E);
     return ThemeData(
       brightness: Brightness.light,
